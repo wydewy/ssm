@@ -3,7 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd  
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd  
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -17,4 +19,14 @@
 
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
+	
+	 <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->  
+    <dubbo:application name="wydewy-web" />  
+  
+    <!-- 使用zookeeper注册中心暴露服务地址 -->  
+    <dubbo:registry address="multicast://224.5.6.7:1234" />  
+    <!-- <dubbo:registry address="zookeeper://192.168.24.213:2181" />  --> 
+  
+    <!-- 生成远程服务代理，可以像使用本地bean一样使用demoService -->  
+    <dubbo:reference id="userServiceImpl"  interface="com.wydewy.manager.service.UserService" />  
 </beans>  

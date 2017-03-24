@@ -10,11 +10,6 @@
 
 	<!-- 依賴管理 -->
 	<dependencies>
-		<dependency>
-			<groupId>com.wydewy</groupId>
-			<artifactId>wydewy-pojo</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 
 		<!-- Mybatis -->
 		<dependency>
@@ -44,6 +39,11 @@
 			<artifactId>druid</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.wydewy</groupId>
+			<artifactId>wydewy-pojo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

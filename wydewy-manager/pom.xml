@@ -11,7 +11,7 @@
   	<module>wydewy-dao</module>
   	<module>wydewy-pojo</module>
   	<module>wydewy-service</module>
-  	<module>wydewy-web</module>
+  	<module>wydewy-interface</module>
   </modules>
   
   <!-- 依賴管理 -->  

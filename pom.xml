@@ -8,10 +8,14 @@
 	<modules>
 		<module>wydewy-common</module>
 		<module>wydewy-manager</module>
+		<module>wydewy-web</module>
 	</modules>
 
 	<!-- 集中定义依赖版本号 -->
 	<properties>
+		<dubbo.version>2.5.3</dubbo.version>
+		<zookeeper.version>3.4.9</zookeeper.version>
+		<zkclient.version>0.1</zkclient.version>
 		<junit.version>4.12</junit.version>
 		<spring.version>4.3.7.RELEASE</spring.version>
 		<mybatis.version>3.2.8</mybatis.version>
@@ -39,7 +43,25 @@
 	<!-- 作用是只定义依赖版本，并不是实际的依赖 -->
 	<dependencyManagement>
 		<dependencies>
+			<!-- dubbo相关 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>${dubbo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.zookeeper</groupId>
+				<artifactId>zookeeper</artifactId>
+				<version>${zookeeper.version}</version>
+			</dependency>
 
+			<dependency>
+				<groupId>com.github.sgroschupf</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>${zkclient.version}</version>
+			</dependency>
+
+			<!-- 其他 -->
 			<dependency>
 				<groupId>org.aspectj</groupId>
 				<artifactId>aspectjweaver</artifactId>

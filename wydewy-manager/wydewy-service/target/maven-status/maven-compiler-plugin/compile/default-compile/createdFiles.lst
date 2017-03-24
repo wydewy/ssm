@@ -1,2 +1,2 @@
-com\wydewy\manager\service\UserService.class
 com\wydewy\manager\service\impl\UserServiceImpl.class
+com\wydewy\manager\service\main\Bootstrap.class
